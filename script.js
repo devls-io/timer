@@ -46,6 +46,7 @@ class Timer{
         this.resetBtn = resetBtn
         this.modal = modal
         this.alarmSound = alarmSound
+        this.alarmSound.volume = 0.1
 
         // Métodos
         this.init()
