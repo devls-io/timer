@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira Code", monospace; ;
+}
+
+/* Corpo do site */
+body {
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    background: linear-gradient(135deg, #021431 0%, #c2e9fb 100%);
+    background-size: cover;
+}
+
+h1{
+    font-size: 2.5em;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.1);
+   
+    
+    
+}
+
+/* Contêiner principal do timer */
+#timer-container {
+    border-radius: 12px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+
+
+    background-color: #bbd9f7; 
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.589),
+    5px 10px 15px rgba(91, 168, 193, 0.651); /* Sombras com azul suave */
+}
+
+/* Exibição do timer */
+#timer-display {
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 3px solid #4c90af;
+    
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timer-inactive{
+    opacity: 0.6;
+}
+
+/* Estilo dos inputs */
+.timer-inputs input {
+    width: 60px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+   
+}
+
+.timer-inputs input:focus {
+    border-color:  #4c98af;
+}
+
+
+
+/* Estilo dos botões */
+.timer-buttons button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.timer-buttons #startBtn {
+    background-color: #4c90af;
+    color: white;
+}
+
+
+.timer-buttons #startBtn:hover {
+    background-color: #386c85;
+}
+
+.timer-buttons #resetBtn {
+    background-color: #f44336a4;
+    color: white;
+    display: none; /* Inicialmente oculto */
+}
+
+.timer-buttons #resetBtn:hover {
+    background-color: #e53935;
+}
+
+
+.timer-inputs input::placeholder {
+    color: #aaa;
+}
+
+
+/* Estilo do Modal */
+#modal {
+    display: none; /* Inicialmente invisível */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Fica sobre outros conteúdos */
+
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease; /* Transição de opacidade */
+    
+
+  }
+
+/* Quando o modal estiver visível */
+#modal.show {
+    
+    opacity: 1; /* Deixa ele visível com animação */
+}
+
+
+
+  
+/* Conteúdo do Modal */
+  #modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.164);
+
+    animation: fadeIn 0.3s ease; /* Animação do conteúdo */
+   
+  }
+  
+/* Botão de Fechar */
+  #close-modal {
+    background-color: #4c98af;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  
+  #close-modal:hover {
+    background-color: #274b57;
+  }
+
+
+
+
+/* Definindo a animação de fade-in para o conteúdo */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9); /* Começa com o conteúdo um pouco menor */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Termina no tamanho normal */
+    }
+}
+  
+
+
+@media(max-width:600px){
+   
+    #timer-container{
+        width: 90vw;
+    }
+}
+
+@media(max-width: 350px){
+   #timer-display{
+        font-size: clamp(30px, 8vw, 40px);
+   }
+
+
+  .timer-inputs input{
+    display: block;
+    margin: 5px auto;
+    width: 70%;
+  }
+
+  #modal-content{
+    width: 70vw;
+  }
+}

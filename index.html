@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <h1>TIMER ⏰ </h1>
+    <div id="timer-container">
+        <!--Exibição do tempo-->
+        <div id="timer-display" class="timer-inactive">00:00:00</div>
+
+        <!-- Inputs para inserir tempo -->
+        <div class="timer-inputs">
+            <input type="number"  id="hours" placeholder="Hrs" min="0" max="99">
+
+            <input type="number"  id="minutes" placeholder="Min" min="0" max="99">
+
+            <input type="number"  id="seconds" placeholder="Seg" min="0" max="59">
+        </div>
+
+        <!-- Botões para controle -->
+        <div class="timer-buttons">
+            <button id="startBtn">Iniciar</button>
+            <button id="resetBtn">Resetar Timer</button>
+        </div>
+    </div>
+
+    <div id="modal" style="display: none;">
+        <div id="modal-content">
+            <div id="modal-message">O tempo acabou</div>
+            <button id="close-modal">Fechar</button>
+        </div>
+    </div>
+
+     <script src="script.js"></script>
+</body>
+</html>
