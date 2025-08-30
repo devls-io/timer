@@ -47,7 +47,7 @@ class Timer{
         this.modal = modal
         this.alarmSound = alarmSound
 
-        // Méntodos
+        // Métodos
         this.init()
         this.updateButtons()
         this.updateDisplay()
