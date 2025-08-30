@@ -122,6 +122,11 @@ h1{
     color: #aaa;
 }
 
+/* Para inputs desabilitados */
+.timer-inputs input:disabled{
+    cursor: not-allowed;
+}
+
 
 /* Estilo do Modal */
 #modal {
